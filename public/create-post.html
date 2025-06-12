@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Novo Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-4">Criar Novo Post</h1>
+        <form id="postForm">
+            <div class="mb-3">
+                <label for="title" class="form-label">Título</label>
+                <input type="text" class="form-control" id="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Conteúdo</label>
+                <textarea class="form-control" id="content" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Salvar Post</button>
+            <a href="index.html" class="btn btn-secondary ms-2">Voltar para a Lista</a>
+        </form>
+    </div>
+
+    <script>
+        // Função para obter os posts do localStorage
+        function getPosts() {
+            const posts = localStorage.getItem('posts');
+            // Se não houver posts, retorna um array vazio. Caso contrário, retorna os posts parseados.
+            return posts ? JSON.parse(posts) : [];
+        }
+
+        // Função para salvar os posts no localStorage
+        function savePosts(posts) {
+            localStorage.setItem('posts', JSON.stringify(posts));
+        }
+
+        // Adiciona um "ouvinte" de evento para quando o formulário for enviado
+        document.getElementById('postForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o comportamento padrão de recarregar a página
+
+            const title = document.getElementById('title').value; // Pega o valor do campo título
+            const content = document.getElementById('content').value; // Pega o valor do campo conteúdo
+
+            const posts = getPosts(); // Pega a lista atual de posts
+
+            // Cria um novo post com um ID único (usando o timestamp atual)
+            const newPost = {
+                id: Date.now(), // ID único baseado na data/hora
+                title: title,
+                content: content
+            };
+
+            posts.push(newPost); // Adiciona o novo post à lista
+            savePosts(posts); // Salva a lista atualizada de posts no localStorage
+
+            // Redireciona para a página principal (lista de posts)
+            window.location.href = 'index.html';
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
