@@ -23,8 +23,7 @@ Certifique-se de ter o Docker Desktop instalado e em execução no seu computado
 
 1.  **Clone o Repositório:**
     ```bash
-    git clone [https://github.com/](https://github.com/)[seu-usuario]/[nome-do-repositorio].git
-    cd [nome-do-repositorio]
+    git clone https://github.com/RafaelRibeiro9666/criando-um-blog-com-container-apps
     ```
 2.  **Construa a Imagem Docker:**
     Navegue até a pasta `Lab` onde está o `Dockerfile`:
