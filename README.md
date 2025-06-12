@@ -88,7 +88,17 @@ Para implantar no Azure, você precisará de uma conta Azure e a Azure CLI insta
         --ingress external \
         --query properties.configuration.ingress.fqdn
     ```
-    **Nota:** Substitua o comando `az containerapp create` acima se o seu script original for diferente. O comando que gerou o link do seu blog foi este que te levou ao sucesso!
+
+## 📸 Demonstração do Blog no Azure
+
+### Página Inicial
+![Página Inicial do Blog no Azure](CapturasdeTela/1.png)
+
+### Criando um Novo Post
+![Tela de Criação de Post no Blog](CapturasdeTela/2.png)
+
+### Interagindo com o Post
+![Tela de Interação](CapturasdeTela/3.png)
 
 ## Link da Aplicação em Produção
 
