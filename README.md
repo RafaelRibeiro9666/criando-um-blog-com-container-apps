@@ -89,7 +89,7 @@ Para implantar no Azure, você precisará de uma conta Azure e a Azure CLI insta
         --query properties.configuration.ingress.fqdn
     ```
 
-## 📸 Demonstração do Blog no Azure
+## Demonstração do Blog no Azure
 
 ### Página Inicial
 ![Página Inicial do Blog no Azure](CapturasdeTela/1.png)
